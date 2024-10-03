@@ -72,7 +72,6 @@ nav .logo img {
     display: flex;
     justify-content: center;
     list-style: none;
-
     margin-top: 30px;
 }
 
@@ -358,7 +357,7 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     width: 100%;
-    height: 68s0px;
+    height: 680px;
 
 
 
@@ -413,7 +412,7 @@ form textarea {
     width: 100%;
     padding: 17px;
     border: none;
-    outline: 1px solid black;
+    outline: 1px solid #ddd;
     background-color: #ffffff;
     font-size: 20px;
 

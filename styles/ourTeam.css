@@ -1,97 +1,101 @@
-body {
-    font-family: 'Poppins', sans-serif;
+* {
     margin: 0;
-    background-color: #f0f0f0;
-
-}
-
-html {
+    padding: 0;
     box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-    scroll-behavior: smooth;
+body {
+    font-family: 'Poppins';
+    background-color: #aaaaaa40;
 
 }
 
-main h2 {
-    color: #6998AB;
-    font-size: 1.75rem;
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
 }
 
 .column {
-    float: left;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
+    width: 30%;
+    padding: 15px;
     display: flex;
     justify-content: center;
+
 }
 
 .card {
     background-color: #fff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    margin: 8px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(80, 231, 254, 0.5);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    width: 20em;
+    height: 22em;
+    position: relative;
+    margin-top: 15%;
 }
 
 .card:hover {
     transform: scale(1.05);
-
+    box-shadow: 0 0 30px rgba(154, 213, 228, 0.8);
 }
 
-.about-section {
-    padding: 50px;
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid white;
+}
+
+h1 {
+    color: #fff;
     text-align: center;
-    background-color: #474e5d;
-    color: white;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgb(120, 176, 191), 0 0 3px rgb(128, 202, 210), 0 0 20px rgba(148, 235, 244, 0.235);
 }
 
 .container {
-    padding: 0 16px;
-}
-
-.container::after,
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+    padding: 70px 16px 16px;
 }
 
 .title {
     color: grey;
+    margin-bottom: 10px;
 }
 
 .button {
     border: none;
     outline: 0;
     display: inline-block;
-    padding: 8px;
+    padding: 10px;
     color: white;
-    background-color: #000;
+    background-color: #3e7a91;
     text-align: center;
-    cursor: pointer;
-    width: 100%;
+    width: 30%;
     transition: background-color 0.3s;
-    border-radius: 5px;
+    margin-top: 5em;
 }
 
 .button:hover {
-    background-color: #555;
+    background-color: #3e7a9156;
 }
 
-.profile-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+
+@media screen and (max-width: 768px) {
+    .column {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+    }
 }
 
 nav {
