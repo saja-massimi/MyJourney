@@ -159,12 +159,8 @@ document.querySelector(".sign-up-form")
 
     alert("User data saved successfully!");
 
-    document.querySelector(".alert").innerHTML(
-      ` <div class='alert alert-danger' role='alert'>
-User data saved successfully!
-</div> `);
 
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
   });
 
 
