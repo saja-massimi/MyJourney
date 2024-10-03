@@ -188,7 +188,7 @@ main {
 }
 
 /* Services */
-/* Ensure the image is centered and sized properly */
+
 .container-image {
     display: flex;
     justify-content: center;
@@ -197,14 +197,13 @@ main {
 
 .container-image img {
     height: 120px;
-    /* Adjust the size to your preference */
     width: 120px;
     transition: all 0.7s ease;
     object-fit: cover;
     margin-bottom: 15px;
 }
 
-/* Hover effect for the entire container-box */
+
 .container-box {
     border: 1px solid #d3d3d3;
     border-radius: 5px;
@@ -216,13 +215,13 @@ main {
     overflow: hidden;
 }
 
-/* Hover effect on image */
+
 .container-box:hover .container-image img {
     transform: translateY(-20px) scale(0.9);
-    /* Moves the image up and shrinks it */
+
 }
 
-/* Hover effect on description */
+
 .desc {
     opacity: 0;
     transition: opacity 1s ease;
@@ -254,11 +253,10 @@ main {
     color: var(--primary-color);
 }
 
-/* Grid layout for the cards */
+
 .rowitems {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* Adjusted for responsiveness */
     gap: 25px;
     align-items: center;
     text-align: center;
@@ -316,37 +314,89 @@ main {
 }
 
 
-/* Contact Us */
+/* Conatct Us */
 
-.contactbody {
-    background-color: #101010;
-    background-repeat: no-repeat;
-    background-size: cover;
+.contactUs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
 
 }
 
-.contact {
-    padding: 110px 30%;
-    height: 100%;
-    min-height: 100vh;
+.contactUs h2 {
+
+    font-size: 38px;
 }
 
-.contact-form h1 {
-    font-size: 80px;
+.contactUs p {
+    font-size: 20px;
+    color: #4c4c4c;
+}
+
+.contactUs form {
+    margin-top: 0px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+
+
+.contact-form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    height: 700px;
+
+
+
+}
+
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #6998AB;
     color: white;
-    margin-bottom: 20px;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
 }
 
-.contact-form h1 span {
-    color: #fc0050;
-}
-
-.contact-form p {
-    color: white;
-    line-height: 30px;
-    letter-spacing: 1px;
-    font-size: 23px;
-    margin-bottom: 20px;
+.submit-button:hover {
+    background-color: #6998abb0;
 }
 
 
@@ -354,8 +404,8 @@ main {
 form textarea {
     width: 100%;
     padding: 17px;
-    border: 1px solid rgba(0, 0, 0, 0.126);
-    outline: none;
+    border: none;
+    outline: 1px solid black;
     background-color: #ffffff;
     font-size: 20px;
     color: white;
@@ -363,29 +413,23 @@ form textarea {
     border-radius: 10px;
 }
 
-.contact-form form .submit-btn {
-    display: inline-block;
-    background-color: #fc0050;
-    font-size: 27px;
-    font-weight: 600px;
-    border: 2px solid transparent;
-    border-radius: 40px;
-    width: 220px;
-    cursor: pointer;
-    transition: ease 0.30s;
-
+textarea {
+    resize: vertical;
 }
 
-.contact-form form .submit-btn:hover {
-    border: 2px solid #fc0050;
-    background-color: transparent;
-    transform: scale(1.1);
-
+input,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
 }
 
 /*Footer*/
 .footer {
-
+    display: sticky;
     bottom: 0;
     width: 100%;
     background-color: #6998AB;
