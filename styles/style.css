@@ -434,6 +434,89 @@ textarea {
     box-sizing: border-box;
     font-size: 1rem;
 }
+/* about us */
+.aboutUs{
+    justify-content: center;
+    padding: 40px;
+    background-color: #6998ab7e;
+  }
+
+  .card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(80, 231, 254, 0.5); 
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; 
+    width: auto;
+    height: auto; 
+    position: relative;
+    margin-top: 10%;
+  }
+.card p{
+margin-top: 7%;
+font-size: 1.2em; 
+
+}
+  
+
+  .profile-image {
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%; 
+    object-fit: cover;
+    position: absolute; 
+    top: -50px;
+    left: 50%; 
+    transform: translateX(-50%);
+    border: 5px solid white;
+  }
+
+
+  .container {
+    padding: 70px 100px 10px;
+  }
+
+  .title {
+    
+    color:  #3e7a9156;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    font-size: 1.5em;
+  
+  }
+.container a {
+border: none;
+outline: 0;
+display: inline-block;
+padding: 10px;
+color: white;
+background-color: #3e7a91;
+text-align: center;
+width: 30%;
+margin: 0.3em;
+border-radius: 10px; 
+text-decoration: none;
+}
+
+
+
+@media (max-width: 768px) {
+    .title {
+      padding-top: 20px; 
+      margin-top: 10px; 
+      font-size: 1.2em; 
+    }
+    
+    .aboutUs {
+      padding: 20px; 
+    }
+    
+    .container {
+      padding: 30px 50px 10px;
+    }
+  }
+  
+ 
 
 /*Footer*/
 .footer {
