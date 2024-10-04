@@ -11,6 +11,7 @@
     list-style: none;
     scroll-behavior: smooth;
 }
+
 /* Home page */
 /* تغيير ألوان الزر الهمبرجر */
 .navbar-toggler {
@@ -68,6 +69,7 @@ nav .logo img {
     flex: 1;
 
 }
+
 .navbar {
     display: flex;
     justify-content: center;
@@ -128,6 +130,8 @@ nav .logo img {
     padding: 10px;
 }
 
+
+
 /*Header content*/
 .title {
     text-decoration: none;
@@ -139,10 +143,15 @@ nav .logo img {
     vertical-align: center;
 }
 
+.title p {
+    color: white;
+}
+
 .title h1 {
     font-size: 10vh;
     text-shadow: 2px black;
     transition: ease 0.3s;
+    color: white;
 }
 
 .title h1:hover {
@@ -430,97 +439,102 @@ textarea {
     box-sizing: border-box;
     font-size: 1rem;
 }
+
 /* about us */
-.aboutUs{
+.aboutUs {
     justify-content: center;
     padding: 40px;
     background-color: #6998ab7e;
-  }
+}
 
-  .card {
+.card {
     background-color: #fff;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(80, 231, 254, 0.5); 
+
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s; 
+    transition: transform 0.3s, box-shadow 0.3s;
     width: auto;
-    height: auto; 
+    height: auto;
     position: relative;
     margin-top: 10%;
-  }
-.card p{
-margin-top: 7%;
-font-size: 1.2em; 
+}
+
+.card p {
+    margin-top: 7%;
+    font-size: 1.2em;
 
 }
-  
 
-  .profile-image {
-    width: 200px; 
+
+.profile-image {
+    width: 200px;
     height: 200px;
-    border-radius: 50%; 
+    border-radius: 50%;
     object-fit: cover;
-    position: absolute; 
+    position: absolute;
     top: -50px;
-    left: 50%; 
+    left: 50%;
     transform: translateX(-50%);
     border: 5px solid white;
-  }
+}
 
 
-  .container {
+.container {
     padding: 70px 100px 10px;
-  }
+}
 
-  .title {
-    
-    color:  #3e7a9156;
+.title {
+
+    color: #3e7a9156;
     margin-bottom: 20px;
     font-weight: bolder;
     font-size: 1.5em;
-  
-  }
+
+}
+
 .container a {
-border: none;
-outline: 0;
-display: inline-block;
-padding: 10px;
-color: white;
-background-color: #3e7a91;
-text-align: center;
-width: 30%;
-margin: 0.3em;
-border-radius: 10px; 
-text-decoration: none;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    background-color: #3e7a91;
+    text-align: center;
+    width: 30%;
+    margin: 0.3em;
+    border-radius: 10px;
+    text-decoration: none;
 }
 
 
 
 @media (max-width: 768px) {
     .title {
-      padding-top: 20px; 
-      margin-top: 10px; 
-      font-size: 1.2em; 
+        padding-top: 20px;
+        margin-top: 10px;
+        font-size: 1.2em;
     }
-    
+
     .aboutUs {
-      padding: 20px; 
+        padding: 20px;
     }
-    
+
     .container {
-      padding: 30px 50px 10px;
+        padding: 30px 50px 10px;
     }
-  }
+}
 
 @media (max-width: 600px) {
 
-    .navbar, .auth-navbar {
+    .navbar,
+    .auth-navbar {
         flex-direction: column;
         text-align: center;
         padding: 5px 0;
     }
 
-    .navbar a, .auth-navbar a {
+    .navbar a,
+    .auth-navbar a {
         padding: 10px 0;
         font-size: 1rem;
     }
@@ -540,32 +554,33 @@ text-decoration: none;
         padding: 8px 20px;
     }
 
-    
+
     .container-box {
         padding: 15px;
         margin: 10px;
     }
 
-    
+
     .container-image img {
         height: 80px;
         width: 80px;
     }
 
-    
-    .text h2, .location-title h2 {
+
+    .text h2,
+    .location-title h2 {
         font-size: 28px;
         margin: 15px 0;
     }
 
- 
+
     .rowitems {
         grid-template-columns: 1fr;
         gap: 10px;
         margin: 10px;
     }
 
-    
+
     .aboutUs {
         padding: 10px;
     }
@@ -580,14 +595,15 @@ text-decoration: none;
         height: 150px;
     }
 
-    
+
     .contact-form-container {
         padding: 10px;
         width: 100%;
         max-width: 100%;
     }
 
-    input, textarea {
+    input,
+    textarea {
         font-size: 16px;
     }
 
@@ -597,7 +613,7 @@ text-decoration: none;
     }
 }
 
- 
+
 
 /*Footer*/
 .footer {
