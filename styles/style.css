@@ -122,7 +122,9 @@ nav .logo img {
     padding: 10px;
 }
 
-
+#logout {
+    cursor: pointer;
+}
 
 /*Header content*/
 .title {
