@@ -157,14 +157,14 @@ document.querySelector(".sign-up-form")
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
 
-    alert("User data saved successfully!");
+    // alert("User data saved successfully!");
 
     document.querySelector(".alert").innerHTML(
       ` <div class='alert alert-danger' role='alert'>
 User data saved successfully!
 </div> `);
 
-    window.location.href = "index.html";
+    window.location.href = "./index.html";
   });
 
 
@@ -191,8 +191,6 @@ document.querySelector('.sign-in-form')
 
       window.location.href = 'index.html';
     } else {
-
-
       alert('Invalid email or password. Please try again.');
     }
   });
