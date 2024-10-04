@@ -81,6 +81,10 @@ nav .logo img {
     padding: 10px;
 }
 
+#logout {
+    cursor: pointer;
+}
+
 body {
     margin: 0;
     padding: 0;

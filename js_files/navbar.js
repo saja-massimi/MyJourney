@@ -14,3 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
         guestNavbar.style.display = "flex";
     }
 });
+
+/*******************Handle Logout Stuff*****************/
+const logout = document.getElementById("logout");
+logout.addEventListener("click", () => {
+    localStorage.removeItem("loggedInUserEmail");
+    setTimeout(() => {
+
+        window.location.href = "../index.html";
+    }, 2000);
+
+});
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel</title>
+    <link rel="stylesheet" href="./styles/hotels.css">
+</head>
+
+<body>
+
+    <nav id="userNavbar" style="display: none;">
+        <a href="#" class="logo">
+            <img src="./files/myjourney.png" alt="Logo" title="MYJOURNEY"></a>
+        <ul class="navbar">
+            <li>
+                <a href="#home">Home</a>
+                <a href="./locations.html">Locations</a>
+                <a href="#aboutus">About Us</a>
+                <a href="#contact">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="auth-navbar">
+            <li>
+                <a href="./profile.html">Profile</a>
+                <span style="color:white">|</span>
+                <a id="logout" style="color: white;">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="filter-bar">
+        <button class="filter-btn">Hotels</button>
+        <button class="foodButton">Restaurants</button>
+    </div>
+    <div class="search-section">
+        <input type="text" id="hotel-name" placeholder="Enter hotel name">
+        <input type="date" id="check-in" required>
+        <input type="date" id="check-out" required>
+        <select id="adults" required>
+            <option value="1">1 Adult</option>
+            <option value="2">2 Adults</option>
+            <option value="3">3 Adults</option>
+            <option value="4">4 Adults</option>
+            <option value="5">5 Adults</option>
+        </select>
+        <select id="children" required>
+            <option value="0">0 Children</option>
+            <option value="1">1 Child</option>
+            <option value="2">2 Children</option>
+            <option value="3">3 Children</option>
+            <option value="4">4 Children</option>
+        </select>
+        <button id="search-btn">Search</button>
+    </div>
+
+    <div class="resort-list"></div>
+
+    <script src="./js_files/details.js"></script>
+</body>
+
+
+
+
+</html>

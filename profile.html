@@ -14,32 +14,53 @@
 </head>
 
 <body>
-    <nav>
-        <a href="#" class="logo">
-            <img src="./files/myjourney.png" alt="Logo" title="MYJOURNEY"></a>
 
+    <nav id="guestNavbar">
+        <a href="./index.html" class="logo">
+            <img src="./files/myjourney.png" alt="Logo" title="MYJOURNEY"></a>
         <ul class="navbar">
             <li>
-                <a href="index.html">Home</a>
+                <a href="./index.html">Home</a>
                 <a href="./locations.html">Locations</a>
-                <a href="./about.html">About Us</a>
-                <a href="./contact.html">Contact Us</a>
+                <a href="./index.html#aboutus">About Us</a>
+                <a href="./index.html#contact">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="auth-navbar">
+            <li><a href="./register.html">Register</a> <span style="color:white">|</span> <a
+                    href="./register.html">Login</a>
             </li>
         </ul>
 
-        <ul class="auth-navbar">
-            <li><a href="">Register</a> <span style="color:white">|</span> <a href="">Login</a></li>
-        </ul>
-
     </nav>
-    <main>
 
+    <nav id="userNavbar" style="display: none;">
+        <a href="./index.html" class="logo">
+            <img src="./files/myjourney.png" alt="Logo" title="MYJOURNEY"></a>
+        <ul class="navbar">
+            <li>
+                <a href="./index.html">Home</a>
+                <a href="./locations.html">Locations</a>
+                <a href="./index.html#aboutus">About Us</a>
+                <a href="./index.html#contact">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="auth-navbar">
+            <li>
+                <a href="./profile.html">Profile</a>
+                <span style="color:white">|</span>
+                <a id="logout" style="color: white;">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
         <div class="profile-container">
             <h1>User Profile</h1>
             <div class="profile-info">
-                <img src="" alt="Profile Picture" class="profile-pic">
-                <h2 class="user-name">John Doe</h2>
-                <p class="user-email">john.doe@example.com</p>
+                <img src="./files/test.webp" alt="Profile Picture" class="profile-pic">
+                <h2 class="user-name" id="user-name"></h2>
+                <p class="user-email" id="user-email"></p>
             </div>
 
 
@@ -47,9 +68,9 @@
             <div class="user-details">
                 <h2>Account Information</h2>
                 <div class="info-card">
-                    <p><strong>Username:</strong> johndoe123</p>
-                    <p><strong>Email:</strong> john.doe@example.com</p>
-                    <p><strong>Phone Number:</strong> +1 234 567 8901</p>
+                    <p><strong>Username:</strong> <span id="user-det-name"></span></p>
+                    <p><strong>Email:</strong> <span id="user-det-email"></span> </p>
+                    <p><strong>Location:</strong> <span id="user-loc"></span></p>
                 </div>
             </div>
 
@@ -68,21 +89,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="booking-item">
-                    <h3 class="country-name">Japan</h3>
-                    <p class="booking-date">Booking Date: November 20, 2024</p>
-                    <p class="booking-description">
-                        Experience the culture and cuisine of Japan, including Tokyo and Kyoto.
-                    </p>
-                    <div class="guest-info">
-                        <div class="guest-card">
-                            <p><strong>Adults:</strong> 2</p>
-                            <p><strong>Children:</strong> 1</p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
-        </div>
 
     </main>
 
@@ -104,8 +112,8 @@
 
 </html>
 
-
-
+<script src="./js_files/profile.js"></script>
+<script src="./js_files/navbar.js"></script>
 </body>
 
 </html>
