@@ -3,111 +3,30 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <link rel="stylesheet" href="./styles/ourTeam.css">
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 5%;
-      background-color: #aaaaaa40; 
-    }
 
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around; /* تعديل المسافة بين البطاقات */
-    }
-
-    .column {
-      width: 30%;
-      padding: 15px;
-      display: flex;
-      justify-content: center; 
-    }
-
-    .card {
-      background-color: #fff;
-      border-radius: 20px; 
-      box-shadow: 0 0 20px rgba(80, 231, 254, 0.5); 
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s; 
-      width: 18em; 
-      position: relative;
-      margin-top: 15%;
-      padding-bottom: 20px; /* السماح بمساحة إضافية للمحتوى */
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(154, 213, 228, 0.8); 
-    }
-
-    .profile-image {
-      width: 100px; 
-      height: 100px;
-      border-radius: 50%; /* لجعل الصورة دائرية */
-      object-fit: cover; /* قص الصورة بشكل مناسب */
-      position: absolute; /* لتوسيع الصورة في منتصف البطاقة */
-      top: -50px; /* تحريك الصورة لأعلى */
-      left: 50%; /* توسيط الصورة */
-      transform: translateX(-50%); /* تعويض التحريك لتوسيع الصورة */
-      border: 5px solid white; /* إضافة إطار أبيض حول الصورة */
-    }
-
-    h1 {
-      color: #fff;
-      text-align: center;
-      margin-bottom: 30px;
-      text-shadow: 0 0 15px rgb(120, 176, 191), 0 0 3px rgb(128, 202, 210), 0 0 20px rgba(148, 235, 244, 0.235); /* تأثير النيون الأزرق */
-    }
-
-    .container {
-      padding: 70px 16px 16px; /* زيادة البادينج في الأعلى */
-    }
-
-    .title {
-      color: grey;
-      margin-bottom: 10px;
-    }
-
-    .button {
-      border: none;
-      outline: 0;
-      display: inline-block;
-      padding: 10px;
-      color: white;
-      background-color: #3e7a91;
-      text-align: center;
-      width: 30%;
-      transition: background-color 0.3s;
-      margin-top: 2em;
-      text-decoration: none;
-    }
-
-    .button:hover {
-      background-color: #3e7a9156;
-    }
-    .social_icon:hover {
-    transform: translateY(-10px);
-}
-    @media screen and (max-width: 768px) {
-      .column {
-        width: 100%;
-      }
-
-      .card {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
 <body>
+  <nav>
+    <a href="#" class="logo">
+        <img src="./files/myjourney.png" alt="Logo" title="MYJOURNEY"></a>
 
-  <h1>Our Team</h1>
+    <ul class="navbar">
+        <li>
+            <a href="./index.html#">Home</a>
+            <a href="./locations.html">Locations</a>
+            <a href="./about.html">About Us</a>
+            <a href="./contact.html">Contact Us</a>
+        </li>
+    </ul>
+
+    <ul class="auth-navbar">
+        <li><a href="">Register</a> <span style="color:white">|</span> <a href="">Login</a></li>
+    </ul>
+
+</nav>
+  <h1> Meet Our Team!</h1>
   <div class="row">
     <div class="column">
       <div class="card">
@@ -184,6 +103,17 @@
 
   </div>
 
+
+    <!--Footer-->
+    <footer class="footer">
+      <div class="footer-content">
+          <a href="./ourTeam.html" target="_blank">Our Team</a> |
+          <a href="https://github.com/samiyaseen3/Travel-Project.git" target="_blank">
+              <i class="fab fa-github"></i> Github
+          </a>
+          <p>&copy; 2024 MyJourney. All Rights Reserved.</p>
+      </div>
+  </footer>
 </body>
 </html>
 
