@@ -1,15 +1,12 @@
 "use strict"
-const apiKey = "4b3141bb29beee1c182a1ca3ca6b65e74ca99e7f80d52b33badeb04a71ffd084";
+const apiKey = "7952bf438955f976b5093433bdf5380e215c41184a75d7c43ffedd3b34462b75";
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
 
-
 const countryName = getQueryParam('country');
-
-
 
 /********************************************************************************************* */
 
@@ -34,6 +31,15 @@ async function getData(hotelName = countryName, checkIn = "2024-10-10", checkOut
             divHtml.innerHTML = `<p>No Hotels Available</p>`;
         } else {
             const divContent = result.map(function (element) {
+                const hotelData = {
+                    name: element.name,
+                    checkIn: checkIn,
+                    checkOut: checkOut,
+                    adults: adults,
+                    children: children,
+                    total_rate: element.total_rate?.lowest || "JOD 400"
+                };
+
                 return `
                     <div class="resort-item">
                         <h2 class="hotel-name">${element.name ? element.name : ""}</h2>
@@ -44,15 +50,56 @@ async function getData(hotelName = countryName, checkIn = "2024-10-10", checkOut
                                 <li>${element.amenities && element.amenities.length > 5 ? element.amenities[5] : ""}</li>
                                 <li>${element.amenities && element.amenities.length > 1 ? element.amenities[1] : ""}</li>
                             </ul>
-                            <div class="price"> Price: ${element.total_rate ? element.total_rate.lowest : "400$"}</div>
+                            <div class="price"> Price: ${element.total_rate?.lowest || "JOD 400"}</div>
                         </div>
-                        <button class="view-btn">Book Now</button>
+                        <button class="view-btn" data-hotel='${JSON.stringify(hotelData)}'>Book Now</button>
                     </div>
                 `;
             }).join("");
 
 
             divHtml.innerHTML = divContent;
+
+            const bookNowButtons = divHtml.querySelectorAll(".view-btn");
+            bookNowButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+
+                    const hotelData = JSON.parse(event.target.dataset.hotel);
+
+                    const bookingDetails = {
+                        hotelName: hotelData.name,
+                        checkIn: hotelData.checkIn,
+                        checkOut: hotelData.checkOut,
+                        adults: hotelData.adults,
+                        children: hotelData.children,
+                        totalPrice: hotelData.total_rate ? hotelData.total_rate.lowest : "JOD 400",
+                        bookTime: new Date()
+                    };
+
+
+
+                    const email = localStorage.getItem("loggedInUserEmail");
+                    const users = JSON.parse(localStorage.getItem("users"));
+                    const user = users.find(u => u.email === email);
+
+                    if (user) {
+                        let userBookings = user.bookings || [];
+                        userBookings.push(bookingDetails);
+
+                        user.bookings = userBookings;
+                        localStorage.setItem("users", JSON.stringify(users));
+                    } else {
+                        console.error("User not found");
+                    }
+                });
+
+
+
+            });
+
+
+
+
         }
 
     } catch (error) {
@@ -118,3 +165,5 @@ async function getFoods() {
         alert(`Error fetching restaurants: ${error.message}`);
     }
 }
+
+/************************************************************************************************ */
