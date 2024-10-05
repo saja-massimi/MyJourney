@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("user-det-email").textContent = user.email;
 
     /***************************Display Bookings************************/
+    
     if (typeof user.bookings === "undefined") {
         user.bookings = [];
     }
