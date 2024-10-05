@@ -44,7 +44,7 @@ async function getData(hotelName = countryName, checkIn = "2024-10-10", checkOut
                                 <li>${element.amenities && element.amenities.length > 5 ? element.amenities[5] : ""}</li>
                                 <li>${element.amenities && element.amenities.length > 1 ? element.amenities[1] : ""}</li>
                             </ul>
-                            <div class="price"> Price: ${element.total_rate ? element.total_rate.lowest : "400$"}</div>
+                            <div class="price"> Price: ${element.total_rate ? element.total_rate.lowest : "JOD 400"}</div>
                         </div>
                         <button class="view-btn">Book Now</button>
                     </div>
