@@ -14,5 +14,3 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("user-det-name").textContent = user.username;
     document.getElementById("user-det-email").textContent = user.email;
 });
-
-

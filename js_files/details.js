@@ -46,13 +46,50 @@ async function getData(hotelName = countryName, checkIn = "2024-10-10", checkOut
                             </ul>
                             <div class="price"> Price: ${element.total_rate ? element.total_rate.lowest : "400$"}</div>
                         </div>
-                        <button class="view-btn">Book Now</button>
+                       <button class="view-btn" data-hotel='${JSON.stringify(element)}'>Book Now</button>
                     </div>
                 `;
             }).join("");
 
 
             divHtml.innerHTML = divContent;
+            const bookNowButtons = divHtml.querySelectorAll(".view-btn");
+            bookNowButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const hotelData = JSON.parse(event.target.dataset.hotel);
+                    const bookingDetails = {
+                        hotelName: hotelData.name,
+                        checkIn: checkIn,
+                        checkOut: checkOut,
+                        adults: adults,
+                        children: children,
+                        totalPrice: hotelData.total_rate ? hotelData.total_rate.lowest : "400$"
+                    };
+
+                    // Attempt to save booking data to local storage
+                    try {
+                        // Retrieve existing bookings from local storage
+                        let existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
+                        
+                        // Append the new booking
+                        existingBookings.push(bookingDetails);
+                        
+                        // Save the updated array back to local storage
+                        localStorage.setItem('bookings', JSON.stringify(existingBookings));
+                        
+                        // Check if the booking was saved successfully
+                        if (localStorage.getItem('bookings')) {
+                            alert("Booking saved to local storage!");
+                        } else {
+                            alert("Failed to save booking. Please try again.");
+                        }
+                    } catch (error) {
+                        console.error('Error saving booking to local storage:', error);
+                        alert("An error occurred while saving the booking. Please try again.");
+                    }
+                });
+            });
+            
         }
 
     } catch (error) {
