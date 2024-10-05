@@ -1,4 +1,6 @@
 "use strict"
+
+
 const apiKey = "7952bf438955f976b5093433bdf5380e215c41184a75d7c43ffedd3b34462b75";
 
 function getQueryParam(param) {
@@ -72,10 +74,12 @@ async function getData(hotelName = countryName, checkIn = "2024-10-10", checkOut
                         checkOut: hotelData.checkOut,
                         adults: hotelData.adults,
                         children: hotelData.children,
-                        totalPrice: hotelData.total_rate ? hotelData.total_rate.lowest : "JOD 400",
-                        bookTime: new Date()
+                        totalPrice: hotelData.total_rate.lowest ? hotelData.total_rate.lowest : "JOD 400",
+                        bookTime: new Date().toLocaleString()
                     };
 
+                console.log(bookingDetails.totalPrice);
+               
 
 
                     const email = localStorage.getItem("loggedInUserEmail");
@@ -88,6 +92,23 @@ async function getData(hotelName = countryName, checkIn = "2024-10-10", checkOut
 
                         user.bookings = userBookings;
                         localStorage.setItem("users", JSON.stringify(users));
+
+                        Swal.fire({
+                    title: 'Booking Confirmed!',
+                    html: `
+                        <p>You have successfully booked <strong>${bookingDetails.hotelName}</strong>.</p>
+                        <p>Check-in: ${bookingDetails.checkIn}</p>
+                        <p>Check-out: ${bookingDetails.checkOut}</p>
+                        <p>Adults: ${bookingDetails.adults} | Children: ${bookingDetails.children}</p>
+                        <p>Total Price: ${bookingDetails.totalPrice}</p>
+                        <p>Booking Time: ${bookingDetails.bookTime}</p>
+                    `,
+                    icon: 'success',
+                    confirmButtonText: 'Great!'
+                });
+
+
+
                     } else {
                         console.error("User not found");
                     }

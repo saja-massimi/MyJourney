@@ -9,6 +9,8 @@ body, html {
     scroll-behavior: smooth;
     background-color: #6998ab7e;
 }
+
+/*************************Navbar*************************/
 nav {
     width: 100%;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 15%);
@@ -94,16 +96,15 @@ nav .logo img {
 #logout {
     cursor: pointer;
 }
+/*************************Body*************************/
 
 
-/* Background Image for the Body */
-.location-body {
-    background-image: url('./files/background.jpg'); /* Add your background image path */
+.locations{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    /* padding: 50px 0; */
+    padding: 50px 0;
     min-height: 100vh;
 }
 

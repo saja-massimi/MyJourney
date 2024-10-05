@@ -29,13 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const bookingItem = document.createElement('div');
             bookingItem.classList.add('booking-item');
 
+            console.log(bookings.totalPrice);
+
             bookingItem.innerHTML = `
                 <h3 class="country-name">${booking.hotelName}</h3>
                 <p class="booking-date">Check-in: ${booking.checkIn}</p>
                 <p class="booking-date">Check-out: ${booking.checkOut}</p>
                 <p class="booking-description">
-                   <p> Booking for ${booking.adults} adult(s) and ${booking.children} child(ren). </p>
-                   <p> Total Price: ${booking.totalPrice} </p>
+                <p> Booking for ${booking.adults} adult(s) and ${booking.children} child(ren). </p>
+                <p> Total Price: ${booking.totalPrice} </p>
                 </p>
                 <div class="guest-info">
                     <div class="guest-card">
@@ -43,11 +45,43 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p><strong>Children:</strong> ${booking.children}</p>
                     </div>
                 </div>
-                <button class="delete-btn" data-index="${index}">Delete Booking</button>
+                <button class="delete-btn" data-index="${index}">Delete</button>
             `;
 
             bookingsContainer.appendChild(bookingItem);
+            const deleteButton = bookingItem.querySelector('.delete-btn');
+            deleteButton.style.padding = '10px 20px';
+            deleteButton.style.border = 'none';
+            deleteButton.style.backgroundColor = '#6998AB';
+            deleteButton.style.borderRadius = '5px';
+
+
+            deleteButton.addEventListener('mouseover', () => {
+                deleteButton.style.backgroundColor = '#f5f5f5';
+                deleteButton.style.color = '#6998AB';
+                deleteButton.style.transform = 'scale(1.05)';
+                deleteButton.style.transition = 'background-color 0.3s ease, transform 0.2s';
+            });
+        
+            deleteButton.addEventListener('mouseout', () => {
+                deleteButton.style.backgroundColor = '#6998AB';
+                deleteButton.style.color = 'white';
+                deleteButton.style.transform = 'scale(1)';
+            });
+        
+            deleteButton.addEventListener('mousedown', () => {
+                deleteButton.style.transform = 'scale(0.95)';
+            });
+        
+            deleteButton.addEventListener('mouseup', () => {
+                deleteButton.style.transform = 'scale(1)';
+            });
+
+
+
         });
+
+        
         /*****************************************Delete Booked info************************************* */
         const deleteButtons = document.querySelectorAll('.delete-btn');
         deleteButtons.forEach(button => {

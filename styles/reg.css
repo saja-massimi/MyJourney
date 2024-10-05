@@ -156,12 +156,12 @@ form.sign-in-form {
 
 .btn {
     width: 150px;
-    background-color: #6998abe0;
+    background-color: #6998abe0 !important;
     border: none;
     outline: none;
     height: 49px;
     border-radius: 49px;
-    color: #fff;
+    color: #fff !important;
     text-transform: uppercase;
     font-weight: 600;
     margin: 10px 0;
@@ -170,7 +170,8 @@ form.sign-in-form {
 }
 
 .btn:hover {
-    background-color: #6998AB;
+    background-color: #6998AB!important;
+
 }
 
 .panels-container {
@@ -242,7 +243,7 @@ form.sign-in-form {
 .btn.transparent {
     margin: 0;
     background: none;
-    border: 2px solid #fff;
+    border: 2px solid #fff !important;
     width: 130px;
     height: 41px;
     font-weight: 600;
@@ -372,7 +373,7 @@ form.sign-in-form {
 
     .reg-container.sign-up-mode:before {
         transform: translate(-50%, 100%);
-        bottom: 32%;
+        bottom: 30%;
         right: initial;
     }
 
@@ -392,12 +393,15 @@ form.sign-in-form {
     }
 
     .reg-container.sign-up-mode .signin-signup {
-        top: 5%;
+        top: 0%;
         transform: translate(-50%, 0);
     }
 }
 
 @media (max-width: 570px) {
+    ul li{
+        font-size: 0.8rem;
+    }
     form {
         padding: 0 1.5rem;
     }
@@ -407,7 +411,7 @@ form.sign-in-form {
     }
 
     .panel .content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.5rem;
     }
 
     .reg-container {
@@ -420,7 +424,7 @@ form.sign-in-form {
     }
 
     .reg-container.sign-up-mode:before {
-        bottom: 28%;
+        bottom: 20%;
         left: 50%;
     }
 }
