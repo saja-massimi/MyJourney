@@ -150,7 +150,7 @@ async function getFoods() {
                             <p class="coffee-address">${element.address || 'No address available'}</p>
                             <p class="coffee-open">${element.hours || 'No hours available'}</p>
                             <div class="coffee-actions">
-                                <button>Order Now</button>
+                                <button class = "view-btn">Order Now</button>
                             </div>
                         </div>
                     </div>
