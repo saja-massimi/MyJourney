@@ -133,6 +133,8 @@ nav .logo img {
     cursor: pointer;
 }
 
+
+
 /*Header content*/
 .title {
     text-decoration: none;
@@ -693,6 +695,9 @@ textarea {
     .card {
         width: 90%;
         margin: 20px auto;
+    }
+    .card p {
+        margin: 22%;
     }
 
     .profile-image {
