@@ -164,7 +164,8 @@ h1 {
     margin-bottom: 15px;
 }
 
-.country-name {
+.country-name,
+.rest-name {
     margin: 0;
     color: #6998AB;
 }
