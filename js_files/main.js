@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // --------------------------- ChatBot ---------------------------------
+   
 });
- 
+  // --------------------------- ChatBot ---------------------------------
       // Toggle function to show/hide the chat container
       function toggleChat() {
         const chatContainer = document.getElementById("chatContainer");
