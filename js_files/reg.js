@@ -119,7 +119,6 @@ function checkPasswordStrength() {
   return valid;
 }
 
-// Function to toggle sign-up button state
 function toggleSignupButton() {
   const isEmailValid = validateEmail(signupEmail, emailErrorMessage);
   const isPasswordValid = checkPasswordStrength();
@@ -128,18 +127,15 @@ function toggleSignupButton() {
   signupBtn.disabled = !(isEmailValid && isPasswordValid && doPasswordsMatch);
 }
 
-// Event listeners for Sign Up form inputs
 signupEmail.addEventListener("input", toggleSignupButton);
 signupPassword.addEventListener("input", toggleSignupButton);
 confirmPassword.addEventListener("input", toggleSignupButton);
 
-// Validate Sign In form
 function toggleLoginButton() {
   const isEmailValid = validateEmail(loginEmail, emailErrorMessage);
   loginBtn.disabled = !(isEmailValid && loginPassword.value.length >= 8);
 }
 
-// Event listeners for Sign In form inputs
 loginEmail.addEventListener("input", toggleLoginButton);
 loginPassword.addEventListener("input", toggleLoginButton);
 
@@ -169,7 +165,6 @@ document.querySelector(".sign-up-form")
     const alertMessage = document.getElementById("alertMessage");
 
     if (users.some((user) => user.email === email)) {
-      localStorage.setItem("loggedInUserEmail", email);
       alertMessage.classList.remove("d-none");
       alertMessage.classList.add("alert-danger");
       alertMessage.textContent = "This email is already registered!";
@@ -178,6 +173,7 @@ document.querySelector(".sign-up-form")
 
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("loggedInUserEmail", email);
 
     alertMessage.classList.remove("d-none", "alert-danger");
     alertMessage.classList.add("alert-success");
@@ -186,7 +182,7 @@ document.querySelector(".sign-up-form")
 
     setTimeout(() => {
 
-      window.location.href = "../index.html";
+      window.location.href = "./index.html";
     }, 2000);
   });
 
