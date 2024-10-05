@@ -133,7 +133,60 @@ nav .logo img {
     cursor: pointer;
 }
 
+/* Responsive styles */
+@media (max-width: 800px) {
+    .navbar {
+        display: block;
+        text-align: center;
+    }
 
+    .navbar li {
+        margin: 10px 0;
+    }
+    
+
+    .auth-navbar {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .auth-navbar li {
+        margin: 5px 0;
+    }
+
+    /* Flexbox for better alignment */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Mobile menu button */
+.menu-btn {
+    display: none; /* Hidden by default */
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* Show menu button on mobile */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .navbar a {
+        padding: 0px 10px;
+    }
+
+    .navbar.active,
+    .auth-navbar.active {
+        display: block; /* Show when active */
+    }
+}
 
 /*Header content*/
 .title {
@@ -642,7 +695,7 @@ textarea {
 
     .navbar a,
     .auth-navbar a {
-        padding: 10px 0;
+        padding: 0px 10px;
         font-size: 1rem;
     }
 
