@@ -16,6 +16,25 @@
   </head>
 
   <body>
+    <!-- Toggle Button -->
+    <button
+      class="chatbot-toggle-btn bounce"
+      id="openChatBtn"
+      onclick="toggleChat()"
+    >
+      Chat with us
+    </button>
+
+    <!-- Chatbot Container (Initially hidden) -->
+    <div class="chat-container" id="chatContainer">
+      <div class="chatbox" id="chatbox">
+        <div id="chatlog"></div>
+      </div>
+      <input type="text" id="userInput" placeholder="Ask me something..." />
+      <button onclick="getResponse()" class="send-button">Send</button>
+      <!-- Cancel button -->
+      <button class="cancel-btn" onclick="closeChat()">Cancel</button>
+    </div>
     <!-- Header -->
     <header>
       <video
@@ -143,7 +162,7 @@
                         alt="India"
                       />
                       <h5>India</h5>
-                      <p>Book Now</p>
+                      <p>Kashmir</p>
                     </div>
                   </a>
                 </div>

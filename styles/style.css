@@ -507,6 +507,110 @@ textarea {
     text-decoration: none;
 }
 
+.chat-container {
+    width: 300px;
+    max-width: 100%;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    display: none; /* Initially hidden */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+  }
+  
+  .chatbox {
+    height: 300px;
+    overflow-y: scroll;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  /* Style input and buttons */
+  #userInput {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Chatbot toggle button */
+  .chatbot-toggle-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 0px; /* Above the chatbox */
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #6998ab, #6998ab);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 99;
+  }
+  
+  /* Hover effect for button */
+  .chatbot-toggle-btn:hover {
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.25);
+    transform: scale(1.05);
+  }
+  
+  /* Simple bounce animation */
+  .chatbot-toggle-btn.bounce {
+    animation: bounce 1.5s infinite;
+  }
+  
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  
+  /* Cancel button inside chat */
+  .cancel-btn,
+  .send-button {
+    background-color: #6998ab;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Responsive Design */
+  @media only screen and (max-width: 600px) {
+    .chat-container {
+      width: 100%;
+      bottom: 0;
+      right: 0;
+      border-radius: 0; /* Remove rounded corners */
+      box-shadow: none; /* Remove shadow */
+    }
+  
+    .chatbot-toggle-btn {
+      right: 10px;
+      bottom: 10px;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  
+    .chatbox {
+      height: 250px; /* Adjust for smaller screens */
+    }
+  }
+  
 
 
 @media (max-width: 768px) {

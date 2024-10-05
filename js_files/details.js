@@ -78,7 +78,7 @@ async function getData(hotelName = countryName, checkIn = "2024-10-10", checkOut
                         bookTime: new Date().toLocaleString()
                     };
 
-                console.log(bookingDetails.totalPrice);
+                console.log(bookingDetails.totalPrice.lowest);
                
 
 
