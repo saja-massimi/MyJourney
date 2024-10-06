@@ -173,6 +173,7 @@ document.querySelector(".sign-up-form")
 
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
+    
     localStorage.setItem("loggedInUserEmail", email);
 
     alertMessage.classList.remove("d-none", "alert-danger");
@@ -207,7 +208,7 @@ document.querySelector('.sign-in-form')
 
       setTimeout(() => {
 
-        window.location.href = "../index.html";
+        window.location.href = "./index.html";
       }, 2000);
 
     } else {
