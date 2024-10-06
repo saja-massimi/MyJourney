@@ -1,7 +1,7 @@
 "use strict"
 
 
-const apiKey = "7952bf438955f976b5093433bdf5380e215c41184a75d7c43ffedd3b34462b75";
+const apiKey = "541762d6602b4cced6df30433a317bd5a27307ac3f57154b6aebde96ad2c311e";
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -13,10 +13,11 @@ const countryName = getQueryParam('country');
 /********************************************************************************************* */
 
 document.addEventListener("DOMContentLoaded", getData);
+
 document.querySelector(".filter-btn").addEventListener('click', getData);
 document.querySelector(".foodButton").addEventListener('click', getFoods);
 
-async function getData(hotelName = countryName, checkIn = "2024-10-10", checkOut = "2024-10-20", adults = 2, children = 0) {
+async function getData(hotelName = countryName, checkIn = "2024-10-10", checkOut = "2024-10-20", adults = 1, children = 0) {
     const apiUrl = `https://serpapi.com/search.json?engine=google_hotels&q=${encodeURIComponent(hotelName)}&check_in_date=${checkIn}&check_out_date=${checkOut}&adults=${adults}&children=${children}&currency=JOD&gl=us&hl=en&api_key=${apiKey}&q=${countryName}`;
 
     try {
@@ -33,6 +34,7 @@ async function getData(hotelName = countryName, checkIn = "2024-10-10", checkOut
             divHtml.innerHTML = `<p>No Hotels Available</p>`;
         } else {
             const divContent = result.map(function (element) {
+
                 const hotelData = {
                     name: element.name,
                     checkIn: checkIn,
@@ -80,7 +82,6 @@ async function getData(hotelName = countryName, checkIn = "2024-10-10", checkOut
                         type: "hotel"
                     };
 
-                    console.log(bookingDetails.totalPrice.lowest);
 
 
 
@@ -106,7 +107,7 @@ async function getData(hotelName = countryName, checkIn = "2024-10-10", checkOut
                         <p>Booking Time: ${bookingDetails.bookTime}</p>
                     `,
                             icon: 'success',
-                            confirmButtonText: 'Great!'
+                            confirmButtonText: 'Great'
                         });
                     } else {
                         console.error("User not found");

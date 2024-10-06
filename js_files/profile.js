@@ -110,12 +110,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (user) {
                     const index = event.target.dataset.index;
                     if (user.bookings && user.bookings.length > 0) {
+                        Swal.fire({
+                            title: 'Booking Deleted!',
+                            html: `
+                        <p>Your Deletion is Succesful.</p>
+                    `,
+                            icon: 'success',
+                            confirmButtonText: 'Okay'
+                        });
                         user.bookings.splice(index, 1);
                         localStorage.setItem('users', JSON.stringify(users));
 
                         event.target.parentElement.remove();
 
-                        // Check if no bookings left
+
                         if (user.bookings.length === 0) {
                             hotelContainer.innerHTML = '<p>No hotel bookings found.</p>';
                             restaurantContainer.innerHTML = '<p>No restaurant bookings found.</p>';

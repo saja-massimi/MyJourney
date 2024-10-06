@@ -1,5 +1,6 @@
 const users = JSON.parse(localStorage.getItem("users")) || [];
 const loggedInUserEmail = localStorage.getItem("loggedInUserEmail");
+
 const anchorTags = document.querySelectorAll('.carousel-item a');
 
 anchorTags.forEach(anchor => {
@@ -7,7 +8,6 @@ anchorTags.forEach(anchor => {
         event.preventDefault();
         if (loggedInUserEmail && users.some(user => user.email === loggedInUserEmail)) {
 
-        
         const countryName = anchor.getAttribute('name');
         window.location.href = `hotel.html?country=${countryName}`;
         }
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // --------------------------- ChatBot ---------------------------------
+   
 });
  
     // Toggle function to show/hide the chat container
