@@ -1,7 +1,6 @@
 "use strict"
 
 
-const apiKey = "541762d6602b4cced6df30433a317bd5a27307ac3f57154b6aebde96ad2c311e";
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
